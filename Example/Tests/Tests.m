@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Victor Sima. All rights reserved.
 //
 
+#import <VSUberAPIClient/VSProduct.h>
+#import <VSUberAPIClient/VSPrice.h>
+
+
 SPEC_BEGIN(InitialTests)
 
 describe(@"My initial tests", ^{

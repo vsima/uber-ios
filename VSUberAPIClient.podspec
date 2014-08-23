@@ -1,36 +1,31 @@
-#
-# Be sure to run `pod lib lint VSUberAPIClient.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# Any lines starting with a # are optional, but encouraged
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "VSUberAPIClient"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of VSUberAPIClient."
+  s.version          = "0.0.1"
+  s.summary          = "Uber API client for iOS"
   s.description      = <<-DESC
-                       An optional longer description of VSUberAPIClient
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       A objective-c wrapper for Uber's REST API for iOS applications
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/VSUberAPIClient"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/vsima/uber-ios"
   s.license          = 'MIT'
   s.author           = { "Victor Sima" => "vic.sima@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/VSUberAPIClient.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/vsima/uber-ios.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/vicsima'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes'
-  s.resources = 'Pod/Assets/*.png'
+  ## Subspec for Model files
+  s.subspec 'Model' do |ss|
+    ss.requires_arc = true
+    ss.source_files = "Pod/Model/**/*.{h,m}"
+  end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  ## Subspec for Client files
+  s.subspec 'Client' do |ss|
+    ss.requires_arc = true
+    ss.source_files = "Pod/Client/**/*.{h,m}"
+    ss.dependency 'RestKit', '~> 0.23.1'
+    ss.dependency 'AFOAuth2Client', '~> 0.1'
+	ss.dependency 'VSUberAPIClient/Model'
+  end
 end
