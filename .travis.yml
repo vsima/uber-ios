@@ -4,6 +4,7 @@ before_install:
 #  - brew update
 #  - brew uninstall xctool
 #  - brew install -v --HEAD xctool
+  - cd Example && pod install && cd -
 script:
   - chmod +x ./script/run_pretty_tests.sh
   - ./script/run_pretty_tests.sh
