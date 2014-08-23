@@ -1,0 +1,6 @@
+
+target 'VSUberAPIClient', :exclusive => true do
+  pod "VSUberAPIClient", :path => "../"
+
+  pod 'Kiwi'
+end
