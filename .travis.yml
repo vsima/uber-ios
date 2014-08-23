@@ -1,6 +1,9 @@
-# reference: http://www.objc.io/issue-6/travis-ci.html
-
 language: objective-c
-# before_install: cd Example && pod install && cd -
+before_install:
+  - gem install xcpretty
+#  - brew update
+#  - brew uninstall xctool
+#  - brew install -v --HEAD xctool
 script:
-- xctool test -workspace Example/VSUberAPIClient.xcworkspace -scheme VSUberAPIClient -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - chmod +x ./script/run_pretty_tests.sh
+  - ./script/run_pretty_tests.sh
