@@ -1,6 +1,6 @@
 # VSUberAPIClient
 
-[![CI Status](http://img.shields.io/travis/vsima/VSUberAPIClient.svg?style=flat)](https://travis-ci.org/Victor Sima/VSUberAPIClient)
+[![CI Status](http://img.shields.io/travis/vsima/uber-ios.svg?style=flat)](https://travis-ci.org/vsima/uber-ios)
 [![Version](https://img.shields.io/cocoapods/v/VSUberAPIClient.svg?style=flat)](http://cocoadocs.org/docsets/VSUberAPIClient)
 [![License](https://img.shields.io/cocoapods/l/VSUberAPIClient.svg?style=flat)](http://cocoadocs.org/docsets/VSUberAPIClient)
 [![Platform](https://img.shields.io/cocoapods/p/VSUberAPIClient.svg?style=flat)](http://cocoadocs.org/docsets/VSUberAPIClient)
